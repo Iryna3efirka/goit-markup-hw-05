@@ -96,6 +96,20 @@ img {
 .menu .link.current {
     color: var(--accent-color);
 }
+.menu-link.current {
+    position: relative;
+}
+.current::after {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
 .contact {
     display: flex;
     margin-left: auto;
@@ -251,6 +265,27 @@ img {
 }
 .about-gallery-item:last-child {
     margin-right: 0;
+}
+.wrapper-gallery {
+    position: relative;
+}
+.text-gallery {
+    position: absolute;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(47, 48, 58, 0.8);
 }
 .section-title {
     margin-top: 0;
@@ -512,6 +547,25 @@ img {
 .card:focus {
     display: block;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.wrapper-card {
+    position: relative;
+}
+.text-card {
+    position: absolute;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.55;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(33, 150, 243, 0.9);
 }
 .portfolio-services:nth-child(3n) {
     margin-right: 0;
