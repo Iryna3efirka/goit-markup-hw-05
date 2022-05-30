@@ -550,6 +550,7 @@ img {
 }
 .wrapper-card {
     position: relative;
+    overflow: hidden;
 }
 .text-card {
     position: absolute;
@@ -565,7 +566,17 @@ img {
     height: 100%;
     top: 0;
     left: 0;
+    padding: 63px 24px;
     background-color: rgba(33, 150, 243, 0.9);
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card:hover .text-card,
+.card:focus .text-card {
+    opacity: 1;
+    transform: translateY(100%);
 }
 .portfolio-services:nth-child(3n) {
     margin-right: 0;
@@ -596,4 +607,39 @@ img {
     line-height: 1.87;
     letter-spacing: 0.03em;
     color: #757575;
+}
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 528px;
+    min-height: 581px;
+    background-color: #fff;
+}
+.btn-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
 }
